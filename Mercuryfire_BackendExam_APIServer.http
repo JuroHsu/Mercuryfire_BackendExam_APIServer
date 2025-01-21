@@ -1,0 +1,6 @@
+@Mercuryfire_BackendExam_APIServer_HostAddress = http://localhost:5294
+
+GET {{Mercuryfire_BackendExam_APIServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

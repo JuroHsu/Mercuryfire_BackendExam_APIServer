@@ -19,9 +19,9 @@ namespace Mercuryfire_BackendExam_APIServer.Models
             public string ACPD_LoginID { get; set; } = string.Empty;
             public string ACPD_LoginPWD { get; set; } = string.Empty;
             public string ACPD_Memo { get; set; } = string.Empty;
-            public DateTime ACPD_NowDateTime { get; set; }
+            public DateTime ACPD_NowDateTime { get; set; } = DateTime.Now;
             public string ACPD_NowID { get; set; } = string.Empty;
-            public DateTime ACPD_UPDDateTime { get; set; }
+            public DateTime ACPD_UPDDateTime { get; set; } = DateTime.Now;
             public string ACPD_UPDID { get; set; } = string.Empty;
         }
 
@@ -35,14 +35,14 @@ namespace Mercuryfire_BackendExam_APIServer.Models
             public string DeLog_ExecutionProgram { get; set; } = string.Empty;
             public string? DeLog_ExecutionInfo { get; set; } // Nullable to match "Checked" column
             public bool? DeLog_verifyNeeded { get; set; } // Nullable to match "Checked" column
-            public DateTime DeLog_ExDateTime { get; set; }
+            public DateTime DeLog_ExDateTime { get; set; } = DateTime.Now;
         }
 
 
         public class Mercuryfire_BackendExamDbContext(DbContextOptions<Mercuryfire_BackendExamDbContext> options) : DbContext(options)
         {
             public required DbSet<MyOffice_ACPD> MyOffice_ACPD { get; set; }
-            public required DbSet<MyOffice_ExecutionLog> MyOffice_ExcuteionLog { get; set; }
+            public required DbSet<MyOffice_ExecutionLog> MyOffice_ExecutionLog { get; set; }
         }
 
     }
